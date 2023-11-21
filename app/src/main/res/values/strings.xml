@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">EasyCalculator</string>
+    <string name="zero">0</string>
+    <string name="one">1</string>
+    <string name="two">2</string>
+    <string name="three">3</string>
+    <string name="four">4</string>
+    <string name="five">5</string>
+    <string name="six">6</string>
+    <string name="seven">7</string>
+    <string name="eight">8</string>
+    <string name="nine">9</string>
+    <string name="plus">+</string>
+    <string name="minut">-</string>
+    <string name="div">/</string>
+    <string name="muti">*</string>
+    <string name="clear">C</string>
+    <string name="AllClar">AC</string>
+    <string name="openBacket">(</string>
+    <string name="closeBacket">)</string>
+    <string name="dot">.</string>
+    <string name="binary">Binary</string>
+    <string name="octal">Octal</string>
+    <string name="hexadecimal">Hexadecimal</string>
+    <string name="ascit">ASCIIT</string>
+    <string name="pow">POWER</string>
+    <string name="eq">=</string>
+    <string name="power">^</string>
+</resources>
