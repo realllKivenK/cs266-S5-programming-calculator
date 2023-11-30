@@ -118,37 +118,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             baseNumber = dataToCalculate;
             dataToCalculate = ""; // Clear the display after pressing the power button
         }
-        /*
-        else  if (buttonText.equals("Binary")) {
-            try {
-                String binaryResult = MathFunction.decimalToBinary(getResult(dataToCalculate));
-                resultTv.setText(binaryResult);
-                resetPowerState();
-            } catch (Exception e) {
-                resultTv.setText("Err");
-            }
-            return;
-        } else if (buttonText.equals("Octal")) {
-            try {
-                String octalResult = MathFunction.decimalToOctal(getResult(dataToCalculate));
-                resultTv.setText(octalResult);
-                resetPowerState();
-            } catch (Exception e) {
-                resultTv.setText("Err");
-            }
-            return;
-        } else if (buttonText.equals("Hexadecimal")) {
-            try {
-                String hexResult = MathFunction.decimalToHexadecimal(getResult(dataToCalculate));
-                resultTv.setText(hexResult);
-                resetPowerState();
-            } catch (Exception e) {
-                resultTv.setText("Err");
-            }
-            return;
-        }
-
-         */
+      
         else {
             dataToCalculate = dataToCalculate + buttonText;
         }
