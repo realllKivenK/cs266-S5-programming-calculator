@@ -3,11 +3,18 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/logocal"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/logocal"
         android:supportsRtl="true"
         android:theme="@style/Theme.EasyCalculator">
+        <activity
+            android:name=".ListActivity"
+            android:exported="false" />
+            <meta-data
+                android:name="android.support.MainActivity"
+                android:value=".MainActivity" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
