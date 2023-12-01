@@ -12,6 +12,7 @@ import android.view.View;
  @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
 public class ExampleUnitTest {
+    //power test
     @Test
     //power test
     public void numeratorIsZeroAndPowerIsZero() {
@@ -19,7 +20,7 @@ public class ExampleUnitTest {
         assertEquals("Undefined", math.power(0, 0));
     }
     //Binary,Octal and Hex function test
-    /*@Test
+    @Test
     public void testBinary(){
         MathFunction math = new MathFunction();
         assertEquals("101", math.decimalToBinary("5"));
@@ -45,6 +46,6 @@ public class ExampleUnitTest {
         MathFunction math = new MathFunction();
         assertEquals("Please enter a decimal number that is an integer.",math.decimalToBinary("5.21"));
     }
-    */
+
 
 }

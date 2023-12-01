@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     MaterialButton buttonC, buttonBrackOpen, buttonBrackClose;
     MaterialButton buttonDivide, buttonMultiply, buttonPlus, buttonMinus, buttonEquals;
     MaterialButton button0, button1, button2, button3, button4, button5, button6, button7, button8, button9;
-    MaterialButton buttonAC, buttonDot, buttonPower;
+    MaterialButton buttonAC, buttonDot, buttonPower , button_ASCII;
 
     boolean powerClicked = false;
     String baseNumber = "";
@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             assignId(R.id.button_binary);
             assignId(R.id.button_Octal);
             assignId(R.id.button_Hex);
+            assignId(R.id.button_ASCII);
         }
 
 
@@ -84,7 +85,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             if (powerClicked && !baseNumber.isEmpty()) {
                 double baseValue = Double.parseDouble(baseNumber);
                 double exponentValue = Double.parseDouble(dataToCalculate);
-                double powResult = Math.pow(baseValue, exponentValue);
+                String powResult = MathFunction.power(baseValue, exponentValue);
 
                 String resultString = String.valueOf(powResult);
 
@@ -113,12 +114,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 dataToCalculate = dataToCalculate.substring(0, dataToCalculate.length() - 1);
             }
 
-        } else if (buttonText.equals("^")) {
+        } else if (buttonText.equals("POWER")) {
             powerClicked = true;
             baseNumber = dataToCalculate;
             dataToCalculate = ""; // Clear the display after pressing the power button
         }
-        /*
+
         else  if (buttonText.equals("Binary")) {
             try {
                 String binaryResult = MathFunction.decimalToBinary(getResult(dataToCalculate));
@@ -146,9 +147,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 resultTv.setText("Err");
             }
             return;
+        } else if (buttonText.equals("ASCIIT")){
+            try {
+                String a = MathFunction.convertToASCII(getResult(dataToCalculate));
+                resultTv.setText(a);
+            } catch (Exception e) {
+                resultTv.setText("Err");
+            }
         }
 
-         */
+
         else {
             dataToCalculate = dataToCalculate + buttonText;
         }
@@ -162,23 +170,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     String getResult(String data) {
         try {
-            if (data.contains("^")) {
-                // Handle exponentiation directly in Java
-                String[] parts = data.split("\\^");
-                double baseValue = Double.parseDouble(parts[0]);
-                double exponentValue = Double.parseDouble(parts[1]);
-                double powResult = Double.parseDouble(MathFunction.power(baseValue, exponentValue));
 
-                String resultString = String.valueOf(powResult);
-
-                // Set the result in solutionTv
-                solutionTv.setText(data);
-
-                // Set the result in resultTv
-                resultTv.setText(resultString);
-
-                return resultString;
-            } else {
                 // Evaluate other expressions using JavaScript
                 Context context = Context.enter();
                 context.setOptimizationLevel(-1);
@@ -197,7 +189,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
                 return finalResult;
-            }
+
         } catch (Exception e) {
             return "Err";
         }

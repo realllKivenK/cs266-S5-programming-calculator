@@ -11,7 +11,6 @@ public class MathFunction {
             return String.valueOf(a);
         }
     }
-/*
     public static String decimalToBinary(String decimal) {
         try {
             // Parse the decimal string to a double
@@ -139,5 +138,29 @@ public class MathFunction {
             return (char) ('A' + remainder - 10);
         }
     }
-*/
+
+    public static String convertToASCII(String inputString) {
+        // Check if the input string is not empty
+        if (inputString == null || inputString.isEmpty()) {
+            throw new IllegalArgumentException("Input string cannot be null or empty");
+        }
+
+        StringBuilder asciiValues = new StringBuilder();
+        for (int i = 0; i < inputString.length(); i++) {
+            char currentChar = inputString.charAt(i);
+            int asciiValue = (int) currentChar;
+
+            // Append each ASCII value to the result string
+            asciiValues.append(asciiValue);
+
+            // If it's not the last character, add a separator (e.g., comma)
+            if (i < inputString.length() - 1) {
+                asciiValues.append(", ");
+            }
+        }
+
+        return asciiValues.toString();
+    }
+
+
 }
